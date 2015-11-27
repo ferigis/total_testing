@@ -147,9 +147,6 @@ handle_put(Req, #{val := Question} = State) ->
   end.
 
 %% @hidden
-handle_get(Req, #{val := null} = State) ->
-  Body = tt_util:enc_json(total_testing:get_question()),
-  {Body, Req, State};
 handle_get(Req, #{val := Question} = State) ->
   Body = tt_util:enc_json(Question),
   {Body, Req, State}.
