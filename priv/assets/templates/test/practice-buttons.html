@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="text-center col-xs-6"><a class="btn btn-primary btn-lg" href="#/test/practice/list">Practice with a Test</a></div>
+    <div class="text-center col-xs-6"><button class="btn btn-primary btn-lg" data-toggle="modal" ng-click="ctrl.open()">Practice with Random Questions</button></div>
+</div>
+
+<!-- Modal -->
+<script type="text/ng-template" id="randomQuestionsModal.html">
+    <div class="modal-header">
+        <h3 class="modal-title">How many questions do you want?</h3>
+    </div>
+    <div class="modal-body">
+        <input type="number" class="form-control" ng-model="ctrl.numberOfQuestions" value="1" min="1"/>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="ctrl.ok()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="ctrl.cancel()">Cancel</button>
+    </div>
+</script>

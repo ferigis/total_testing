@@ -1,0 +1,53 @@
+.ng-dirty.ng-invalid {
+  border-color: #FA787E;
+}
+
+.list-container {
+  padding-top: 20px;
+}
+
+/* Answer Panel */
+
+.answer-panel-header {
+  padding: 10px 5px 0px 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.answer-panel-header div{
+  border-bottom: solid 1px #DDD;
+}
+
+#answerPanel {
+  padding-top: 5px;
+}
+
+.answer-container {
+  padding-top: 5px;
+}
+
+/* Search Input */
+
+.stylish-input-group .input-group-addon{
+    background: white !important;
+}
+.stylish-input-group .form-control{
+	border-right:0;
+	box-shadow:0 0 0;
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+
+/* GitHub link */
+.link-source img{
+  width: 16px;
+}
+
+a.link-source{
+  color: #fff !important;
+}

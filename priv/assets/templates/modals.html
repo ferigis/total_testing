@@ -1,0 +1,58 @@
+<!-- Confirmation Modal -->
+<script type="text/ng-template" id="confirmationModal.html">
+    <div class="modal-header">
+        <h3 class="modal-title">{{ctrl.msg}}</h3>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primaryl" type="button" ng-click="ctrl.accept()">Confirm</button>
+        <button class="btn btn-primary" type="button" ng-click="ctrl.cancel()">Cancel</button>
+    </div>
+</script>
+
+<!-- Create Question Modal -->
+<script type="text/ng-template" id="addQuestionsModal.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Add a Question</h3>
+    </div>
+    <form name="questionForm" ng-submit="questionForm.$valid && ctrl.saveQuestion();" novalidate>
+        <div class="modal-body">
+            <div>
+                <textarea class="form-control" style="resize: none;" ng-model="ctrl.question.description" placeholder="Question Description" required/>
+                <input type="hidden" ng-model="ctrl.question.test_id" value="{{ctrl.test.id}}" />
+            </div>
+            <div class="row answer-panel-header">
+                <div class="col-xs-1">
+                    <button type="button" class="btn btn-default btn-xs" ng-click="ctrl.addAnswer()">
+                        <span class="glyphicon glyphicon-plus" ></span>
+                    </button>
+                </div>
+                <div class="col-xs-9">
+                    <p class="text-muted">Answers</p>
+                </div>
+                <div class="col-xs-2">
+                    <p class="text-muted">Is Correct</p>
+                </div>
+            </div>
+            <div id="answerPanel"  class="row">
+                <div ng-repeat="answer in ctrl.question.answers" class='row answer-row'>
+                    <div class='col-xs-offset-1 col-xs-1 text-right'>
+                        <button type="button" class="btn btn-danger btn-xs" ng-click="ctrl.deleteAnswer(answer)">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </div>
+                    <div class='col-xs-8'>
+                        <input class='form-control' type='text' ng-model="answer.description" name='description' placeholder='Answer Description'/>
+                    </div>
+                    <div class='col-xs-2'>
+                        <input class='form-control' type='checkbox' ng-model='answer.is_correct'/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="submit" ng-disabled="!questionForm.$valid" >Save</button>
+            <button ng-hide="ctrl.editing" class="btn btn-warning" type="button" ng-click="ctrl.finish()">Finish</button>
+            <button ng-show="ctrl.editing" class="btn btn-primary" type="button" ng-click="ctrl.finish()">Cancel</button>
+        </div>
+    </form>
+</script>

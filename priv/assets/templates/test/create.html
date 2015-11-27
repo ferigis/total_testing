@@ -1,0 +1,11 @@
+<div class="row">
+    <form ng-hide="createTestCtrl.showAddQuestions" name="testForm" ng-submit="testForm.$valid && createTestCtrl.create();" novalidate>
+        <div class="col-xs-8">
+            <input class="form-control" type="text" ng-model="createTestCtrl.test.name" placeholder="Test Name" required/>
+        </div>
+        <div class="col-xs-4 text-right">
+            <button type="submit" class="btn btn-primary" ng-disabled="!testForm.$valid" >Save</button>
+            <a class="btn btn-default" href="#/">Cancel</a>
+        </div>
+    </form>
+</div>

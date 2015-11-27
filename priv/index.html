@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="totalTesting">
+    <head>
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+        <META HTTP-EQUIV="Expires" CONTENT="-1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/app.css">
+        <title>Total Testing v.0.1.0</title>
+    </head>
+    <body role="document" >
+
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#/">Total Testing v.0.1.0</a>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="container" role="main">
+            <div ng-view></div>
+        </div>
+
+        <div id="footer" class="container">
+            <nav class="navbar navbar-inverse navbar-fixed-bottom">
+                <div class="row text-center">
+                    <a href="https://github.com/ferigis/total_testing" target="_blank" class="link-source">view de source code  <img src="assets/img/github.png"/></a>
+                </div>
+            </nav>
+        </div>
+
+        <script src="assets/javascript/lib/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+        <script src="assets/javascript/lib/ui-bootstrap.min.js"></script>
+        <script src="assets/javascript/lib/angular-route.js"></script>
+        <script src="assets/javascript/lib/angular-resource.js"></script>
+        <script src="assets/javascript/app.js"></script>
+        <script src="assets/javascript/routes.js"></script>
+        <!-- Controllers -->
+        <script src="assets/javascript/controller/test/CreateTestController.js"></script>
+        <script src="assets/javascript/controller/test/PracticeListController.js"></script>
+        <script src="assets/javascript/controller/test/PracticeController.js"></script>
+        <script src="assets/javascript/controller/test/PracticeButtonsController.js"></script>
+        <script src="assets/javascript/controller/test/QuestionModalController.js"></script>
+
+        <!-- Services -->
+        <script src="assets/javascript/service/test.js"></script>
+        <script src="assets/javascript/service/question.js"></script>
+
+        <!-- Modals -->
+        <ng-include src="'assets/templates/modals.html'" ></ng-include>
+    </body>
+</html>

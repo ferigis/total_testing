@@ -1,0 +1,21 @@
+{application, 'total_testing',
+ [{description, "Web application for any kind of tests (Driving School, scuba certification...) written in Erlang/OTP"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, {tt_app, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    jiffy,
+    cowboy
+   ]},
+  {env,[]},
+  {modules, []},
+  {start_phases, [
+    {start_datastore, []},
+    {start_cowboy_listeners, []}
+  ]},
+  {contributors, []},
+  {licenses, []},
+  {links, []}
+ ]}.

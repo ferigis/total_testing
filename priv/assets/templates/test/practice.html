@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-xs-6">
+        <h4 ng-hide="ctrl.editing.test">{{ctrl.test.name}}</h4>
+        <input class="form-control" ng-show="ctrl.editing.test" type="text" ng-model="ctrl.test.editedName" placeholder="Test Name" />
+    </div>
+    <div class="col-xs-6 text-right">
+        <button class="btn btn-default" ng-hide="ctrl.editing.test || ctrl.randomMode" ng-click="ctrl.editing.test = true">Edit Name</button>
+        <button class="btn btn-default" ng-hide="ctrl.editing.test || ctrl.randomMode" ng-click="ctrl.addQuestions()">Add Questions</button>
+        <button class="btn btn-danger" ng-hide="ctrl.editing.test || ctrl.randomMode" ng-click="ctrl.deleteTest()">Delete</button>
+        <button class="btn btn-default" ng-show="ctrl.editing.test" ng-click="ctrl.saveTest()">Save</button>
+        <button class="btn btn-default" ng-show="ctrl.editing.test" ng-click="ctrl.cancelTest()">Cancel</button>
+    </div>
+</div>
+<div class="row" ng-show="ctrl.noQuestions">
+    <p class="text-muted">This test has no Questions</p>
+</div>
+<div ng-hide="ctrl.testStarted || ctrl.editing.test || ctrl.noQuestions" class="row text-center">
+    <button class="btn btn-primary btn-lg" ng-click="ctrl.start()">Start!</button>
+</div>
+<div class="row" ng-show="!ctrl.noQuestions && ctrl.testStarted && !ctrl.editing.test">
+
+    <div class="row text-center">
+        <h3>{{ctrl.currentQuestion.description}}</h3>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 text-left">
+            <button uib-tooltip="Edit Question" type="button" class="btn btn-default btn-xs" ng-click="ctrl.editQuestion()">
+                <span class="glyphicon glyphicon-pencil" ></span>
+            </button>
+            <button uib-tooltip="Delete Question" type="button" class="btn btn-danger btn-xs" ng-click="ctrl.deleteQuestion()">
+                <span class="glyphicon glyphicon-trash" ></span>
+            </button>
+        </div>
+    </div>
+    <div class="row text-center answer-container">
+        <div class="list-group">
+            <a href ng-repeat="a in ctrl.currentQuestion.answers" ng-click="ctrl.checkCorrect(a)" class="list-group-item" ng-class="a.class">{{a.description}}</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 text-left">
+            <button ng-hide="ctrl.firstQuestion" class="btn btn-default" ng-click="ctrl.prev()">Prev</button>
+        </div>
+        <div class="col-xs-4 text-center">
+            {{(ctrl.currentIndex + 1) + " / " + ctrl.questions.length}}
+        </div>
+        <div class="col-xs-4 text-right">
+            <button ng-hide="ctrl.lastQuestion" class="btn btn-default" ng-click="ctrl.next()">Next</button>
+            <a ng-show="ctrl.lastQuestion" class="btn btn-primary" href="#/test/practice/list">Finish</a>
+        </div>
+    </div>
+</div>
