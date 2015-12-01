@@ -6,6 +6,8 @@ __Authors:__ Felipe Ripoll. ([`ferigis@gmail.com`](mailto:ferigis@gmail.com)).
 With this web application you can create your own tests (Driving school tests, Academic tests, Flight license tests...) and practice with them.
 This application has been developed using Erlang/OTP (using Mnesia as a store) and Angular JS.
 
+Try it on [Total Testing](http://totaltesting.herokuapp.com/)
+
 ![tf2cal icon](https://raw.githubusercontent.com/ferigis/total_testing/master/screenshot.png)
 
 Build
